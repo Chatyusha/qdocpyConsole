@@ -11,6 +11,8 @@ You can get *qdocpy* from [https://github.com/Chatyusha/qdocpy]().
 ```sh
 git clone https://github.com/Chatyusha/qdocpyConsole.git
 
+cd qdocpyConsole
+
 pip3 install qdocpyConsole
 
 ```
