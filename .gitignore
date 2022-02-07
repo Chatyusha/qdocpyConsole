@@ -1,5 +1,5 @@
 .env/
 casees/
 qdocpy/
-qdocpyConsole/__pycache__/
-qdocpyConsole/app/__pycache__/
+**/__pycache__/
+**/*.egg-info/

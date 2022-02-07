@@ -50,7 +50,7 @@ class App:
             else:
                 ans_num = int(ans)
                 if options[ans_num] == i["answer"]:
-                    print("大正解")
+                    print("正解")
                 else:
                     print("ハズレ")
 
