@@ -29,15 +29,16 @@ class App:
 
             answer_data = {}
             answer_data["answer"] = i.answer
-            answer_data["dummies"] = random.sample(self.qdoc_data.taggroup[i.tag],self.options_num-1)
+            taggroup_len = len(self.qdoc_data.taggroup[i.tag])
+            answer_data["dummies"] = random.sample(self.qdoc_data.taggroup[i.tag],min(taggroup_len,self.options_num)-1)
             while answer_data["answer"] in answer_data["dummies"]:
                 answer_data["dummies"] = random.sample(self.qdoc_data.taggroup[i.tag],
-                min(len(self.qdoc_data.taggroup[i.tag]),self.options_num)-1)
+                min(taggroup_len,self.options_num)-1)
             formed_data["quizzes"].append(answer_data)
         return formed_data
     
     def Interactive(self):
-        qandas = self.get_Quiz(random.randrange(0,len(self.qdoc_data.quizzes)))
+        qandas = self.get_Quiz(random.randint(0,len(self.qdoc_data.quizzes)-1))
         print(qandas["QuizSentence"])
         for i in qandas["quizzes"]:
             options = [i["answer"]] + i["dummies"]
